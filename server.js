@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-
+const PORT = process.env.PORT || 8000;
 app.get("/", (req, res) => {
   res.send("Server is running");
 });
@@ -21,8 +21,8 @@ mongoose
   .then(() => {
     console.log("MongoDB Connected");
 
-    app.listen(8000, () => {
-      console.log("Server running on 8000");
+    app.listen(PORT, () => {
+      console.log(`Server running on ${PORT}`);
     });
   })
   .catch((err) => {
