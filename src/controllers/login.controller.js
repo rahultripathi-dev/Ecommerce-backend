@@ -42,7 +42,7 @@ export const login = async (req, res) => {
       },
       process.env.JWT_SECRET_KEY,
       {
-        expiresIn: "7d",
+      expiresIn: "5m"    
       }
     );
 
